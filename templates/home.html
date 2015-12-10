@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block style %}
+
+<style>
+    body {
+      border-top: 4px solid #1BB2C1;
+      /*min-height: 5000px;*/
+      background: url('{% static "img/beach.jpg" %}') no-repeat center center fixed; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: conver;
+      background-size: cover;
+    }
+   
+    
+   
+</style>
+
+{% endblock %}
+
+{% block content %}
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron" style="background-color: white">
+      <div class="container">
+        <div class="col-sm-6">
+          <h1>HAPPY CODING :)</h1>
+          <p style="text-align:justify;">Belajar tanpa guru (otodidak) itu bikin pusing, untuk mengerti sulitnya bukan main, namun bukan berarti gak bisa, selagi ada usaha
+          pasti ada jalan. Keep SOMANGAT :D</p>
+          <p><a class="btn btn-default btn-lg btn-block" href="#sigup" role="button">Be First&raquo;</a></p>
+        </div>
+        <div class='col-sm-6'>
+            <img src="{% static 'img/faiz.jpg' %}" class="img-responsive img-rounded" />
+        </div>
+      </div>
+    </div>
+
+<div class="container" style="text-align:center;color:#B75906;" id="sigup">
+<div class="col-sm-6 col-sm-offset-3">
+    <i class="fa fa-unlock-alt fa-5x"></i> 
+    <h1>Unlock First</h1>
+    <form class="form-horizontal" method="POST" action=""> {% csrf_token %}
+    <div class="form-group form-group-lg">
+        {% if form.email.errors %}
+          {% for err in form.email.errors %}
+        <div class="alert alert-warning" role="alert"> Email tidak boleh kosong </div>
+        {% endfor %}
+        {% endif %}
+        <div class="input-group">
+          <input class="form-control" type="email" name="email" placeholder="Your email ...."/>
+          <span class="input-group-btn">
+          <input type='submit' value='Join' class='btn btn-primary btn-lg' />
+          </span>
+        </div>
+    </div>
+    </form>
+    <h1>Sign up here. <br/> Get First News on Content </h1>
+
+</div>
+</div>
+
+<div class="row featured-row">
+    <div class="col-sm-12">
+      <div class="col-sm-3 col-sm-offset-3">
+        <i class="fa fa-android fa-3x"></i>
+        <h2>Android</h2>
+        <p class="lead">
+        Beberapa Fitur
+        </p>
+      </div>
+      <div class="col-sm-3">
+        <i class="fa fa-apple fa-3x"></i>
+        <h2>Aplle</h2>
+        <p class="lead">
+        Beberapa Fitur
+        </p>
+      </div>
+      
+    </div>      
+</div>
+
+<div class="row featured-row">
+    <div class="col-sm-12">
+      <div class="col-sm-3">
+        <i class="fa fa-btc fa-3x"></i>
+        <h2>Fitur</h2>
+        <p class="lead">
+        Beberapa Fitur
+        </p>
+      </div>
+      <div class="col-sm-3">
+        <i class="fa fa-cc-visa fa-3x"></i>
+        <h2>Fitur</h2>
+        <p class="lead">
+        Beberapa Fitur
+        </p>
+      </div>
+      <div class="col-sm-3">
+        <i class="fa fa-cc-paypal fa-3x"></i>
+        <h2>Fitur</h2>
+        <p class="lead">
+        Beberapa Fitur
+        </p>
+      </div>
+      <div class="col-sm-3">
+        <i class="fa fa-cc-mastercard fa-3x"></i>
+        <h2>Fitur</h2>
+        <p class="lead">
+        Beberapa Fitur
+        </p>
+      </div>
+    </div>      
+</div>
+
+<div class="row featured-row">
+    <div class="col-sm-3">
+        <i class="fa fa-home fa-3x"></i>
+        <h2>Fitur</h2>
+        <p class="lead">
+        Beberapa Fitur
+        </p>
+      </div>
+      <div class="col-sm-3">
+        <i class="fa fa-car fa-3x"></i>
+        <h2>Fitur</h2>
+        <p class="lead">
+        Beberapa Fitur
+        </p>
+      </div>
+      <div class="col-sm-3">
+        <i class="fa fa-desktop fa-3x"></i>
+        <h2>Fitur</h2>
+        <p class="lead">
+        Beberapa Fitur
+        </p>
+      </div>
+      <div class="col-sm-3">
+        <i class="fa fa-laptop fa-3x"></i>
+        <h2>Fitur</h2>
+        <p class="lead">
+        Beberapa Fitur
+        </p>
+      </div>
+    </div>
+</div>
+
+{% endblock %}
